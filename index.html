@@ -1,0 +1,90 @@
+<!DOCTYPE html> <!-- Documento HTML5. -->
+<!-- Raíz en español. -->
+<html lang="es">
+<!-- Cabecera. -->
+<head>
+    <!-- Codificación UTF-8. -->
+    <meta charset="UTF-8">
+    <!-- Diseño adaptable (obligatorio para que Bootstrap sea responsive). -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título de la pestaña. -->
+    <title>Iniciar sesión | TiendaSENA</title>
+    <!-- CSS de Bootstrap 5.3.3 desde un CDN (un servidor en internet que nos presta el archivo). .min = versión comprimida. -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- librería de íconos. Se usan así: <i class="bi bi-shop"></i>. -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- Nuestros estilos van después de Bootstrap para poder sobrescribirlo (en CSS gana la última regla). -->
+    <link href="css/estilos.css" rel="stylesheet">
+<!-- Cierra la cabecera. -->
+</head>
+<!-- Degradado y centrado con Flexbox (nuestra clase). -->
+<body class="login-fondo">
+
+    <!-- Tarjeta blanca (nuestra clase). -->
+    <main class="login-card">
+        <!-- Encabezado centrado. -->
+        <header class="login-encabezado">
+            <!-- ícono de tienda, muy grande (display-4) y verde (text-sena). -->
+            <i class="bi bi-shop display-4 text-sena"></i>
+            <!-- h3 le da el tamaño de un <h3> sin perder que es el <h1>; fw-bold = negrita. -->
+            <h1 class="h3 fw-bold">TiendaSENA</h1>
+            <!-- texto gris (text-secondary) sin margen inferior (mb-0). -->
+            <p class="text-secondary mb-0">Ingresa tus credenciales para continuar</p>
+        <!-- Cierra el encabezado. -->
+        </header>
+
+        <!-- Formulario de inicio de sesión -->
+        <!-- Al enviar, va al dashboard. -->
+        <form action="dashboard.html" method="get">
+            <!-- form-floating muestra la etiqueta dentro del campo y la hace “flotar” al escribir. Reemplaza nuestra clase campo. mb-3 = margen inferior. -->
+            <div class="form-floating mb-3">
+                <!-- form-control da el estilo de Bootstrap al campo. En form-floating el placeholder es obligatorio aunque no se vea. -->
+                <input type="email" class="form-control" id="correo" placeholder="nombre@correo.com" required>
+                <!-- en form-floating la etiqueta va después del input. Ícono de sobre con margen a la derecha (me-1). -->
+                <label for="correo"><i class="bi bi-envelope me-1"></i> Correo electrónico</label>
+            <!-- Cierra el campo. -->
+            </div>
+            <!-- segundo campo flotante. -->
+            <div class="form-floating mb-3">
+                <!-- campo de contraseña con estilo Bootstrap. -->
+                <input type="password" class="form-control" id="clave" placeholder="Contraseña" minlength="6" required>
+                <!-- etiqueta con ícono de candado. -->
+                <label for="clave"><i class="bi bi-lock me-1"></i> Contraseña</label>
+            <!-- Cierra el campo. -->
+            </div>
+
+            <!-- fila con Flexbox (sin escribir CSS): casilla a la izquierda y enlace a la derecha. -->
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <!-- contenedor de casilla de Bootstrap. -->
+                <div class="form-check">
+                    <!-- casilla con estilo Bootstrap (verde al marcarla, por nuestra personalización). -->
+                    <input class="form-check-input" type="checkbox" id="recordar">
+                    <!-- etiqueta de la casilla. -->
+                    <label class="form-check-label" for="recordar">Recordarme</label>
+                <!-- Cierra la casilla. -->
+                </div>
+                <!-- enlace pequeño sin subrayado (pantalla aún no construida). -->
+                <a href="#" class="small text-decoration-none">¿Olvidaste tu contraseña?</a>
+            <!-- Cierra la fila. -->
+            </div>
+
+            <!-- btn + nuestro btn-sena, ancho completo (w-100), más alto (py-2) y seminegrita. -->
+            <button type="submit" class="btn btn-sena w-100 py-2 fw-semibold">
+                <!-- ícono de “entrar” y texto. -->
+                <i class="bi bi-box-arrow-in-right me-1"></i> Ingresar
+            <!-- Cierra el botón. -->
+            </button>
+        <!-- Cierra el formulario. -->
+        </form>
+
+        <!-- Enlace a la pantalla de registro (la creamos ahora). -->
+        <p class="login-pie">¿No tienes cuenta? <a href="registro.html" class="text-decoration-none">Regístrate</a></p>
+        <!-- Pie. -->
+        <footer class="login-pie">© 2026 SENA · Tecnólogo ADSO</footer>
+    <!-- Cierra la tarjeta. -->
+    </main>
+
+<!-- Cierra el cuerpo. Esta página no necesita el JavaScript de Bootstrap (no tiene menús ni modales). -->
+</body>
+<!-- Cierra el documento. -->
+</html>
